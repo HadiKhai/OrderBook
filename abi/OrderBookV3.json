@@ -1,0 +1,1074 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "orderId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "maker",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "makeAsset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "takeAsset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "makeAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "takeAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "startBlock",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "endBlock",
+        "type": "uint256"
+      }
+    ],
+    "name": "CancelOrderEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "orderId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "maker",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "makeAsset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "takeAsset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "startBlock",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "endBlock",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "quantity",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "fulfilledQuantity",
+        "type": "uint256"
+      }
+    ],
+    "name": "FillingOrderEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "version",
+        "type": "uint8"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "orderId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "maker",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "makeAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "takeAmount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "startBlock",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "endBlock",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "makeAsset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "takeAsset",
+        "type": "address"
+      }
+    ],
+    "name": "OpenOrderEvent",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "_currentOrderId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_value",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "_orderBids",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "makeAmountBought",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "_orderBooks",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "maker",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "makeAsset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "makeAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "takeAsset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takeAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "salt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "startBlock",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "endBlock",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "_orderStatus",
+    "outputs": [
+      {
+        "internalType": "enum IOrderBook.Status",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getCurrentId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "checkOrderExists",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "canFill",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getOrders",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "maker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "takeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "takeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "salt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Order[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "enum IOrderBook.Status[]",
+        "name": "",
+        "type": "uint8[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmountBought",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Bid[][]",
+        "name": "",
+        "type": "tuple[][]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getOrderById",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "maker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "takeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "takeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "salt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Order",
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "internalType": "enum IOrderBook.Status",
+        "name": "",
+        "type": "uint8"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmountBought",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Bid[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getOrdersByMakeAsset",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "maker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "takeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "takeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "salt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Order[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "enum IOrderBook.Status[]",
+        "name": "",
+        "type": "uint8[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmountBought",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Bid[][]",
+        "name": "",
+        "type": "tuple[][]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getOrdersByTakeAsset",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "maker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "takeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "takeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "salt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Order[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "enum IOrderBook.Status[]",
+        "name": "",
+        "type": "uint8[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmountBought",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Bid[][]",
+        "name": "",
+        "type": "tuple[][]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "makerAddress",
+        "type": "address"
+      }
+    ],
+    "name": "getOrdersByAddress",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "maker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "takeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "takeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "salt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Order[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "enum IOrderBook.Status[]",
+        "name": "",
+        "type": "uint8[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmountBought",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Bid[][]",
+        "name": "",
+        "type": "tuple[][]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "bidderAddress",
+        "type": "address"
+      }
+    ],
+    "name": "getOrdersWithBidsByAddress",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "maker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "takeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "takeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "salt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Order[]",
+        "name": "",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "enum IOrderBook.Status[]",
+        "name": "",
+        "type": "uint8[]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmountBought",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Bid[][]",
+        "name": "",
+        "type": "tuple[][]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "getRemainingAmount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "_remaining",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "makeAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "takeAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "makeAsset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "takeAsset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "endBlockTime",
+        "type": "uint256"
+      }
+    ],
+    "name": "openOrder",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "maker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "makeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "makeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "taker",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "takeAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "takeAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "salt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "endBlock",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOrderBook.Order",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "takeOrder",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "cancelOrder",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "success",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

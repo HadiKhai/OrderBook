@@ -1,0 +1,35 @@
+{
+  "name": "order-book",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "scripts": {
+    "launch-devnet": "ganache-cli --networkId 5777 --p 7545 -a 10 -e 100000 --acctKeys devnet-accounts.json -m \"olive cook review chalk discover sample vessel vast soul turkey cigar moment\"",
+    "compile-all": "truffle compile --all",
+    "compile": "truffle compile",
+    "deploy-devnet": "truffle migrate --network development --compile-none",
+    "deploy-devnet-reset": "truffle migrate --network development --reset",
+    "ganache": "ganache-cli",
+    "migrate": "truffle migrate",
+    "test": "truffle test",
+    "test-extra": "truffle test  --stacktrace-extra",
+    "deploy-testnet": "truffle migrate --network testnet --compile-none",
+    "deploy-testnet-reset": "truffle migrate --network testnet --compile-none --reset",
+    "verify-testnet": "truffle run verify --network testnet"
+  },
+  "author": "Hadi Khairallah",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.6.0",
+    "@openzeppelin/truffle-upgrades": "^1.2.3",
+    "@openzeppelin/contracts-upgradeable": "^4.5.1",
+    "truffle-plugin-verify": "^0.5.25"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.0.8",
+    "bn.js": "^5.2.0",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "dotenv": "^16.0.0",
+    "ethers": "^5.6.4"
+  }
+}

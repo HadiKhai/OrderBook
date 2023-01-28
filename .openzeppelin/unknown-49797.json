@@ -1,0 +1,502 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x5A8A46772D151F50CAb4C58D412e22beD0faFf9e",
+    "txHash": "0xfbc4dd03c279e69b1e7feef7a822058be13553a1f85108f823c97a65a8b6c24e"
+  },
+  "proxies": [
+    {
+      "address": "0x7D0E1795834E111ea4BdD676050d1131Bdf0ABa3",
+      "txHash": "0x1a58d54c8da9e3babb5488c09dadce4b69e3d7d5f6d75be8a8544576c4fe66b1",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "5c74e70343a93795da607bc1c7d166e27b8e923fd089fb504c4e89b10d385dab": {
+      "address": "0xE7906d37f805FF323DBc2a029fcC3CEe097AcaAd",
+      "txHash": "0x2911bb4b65c08b4fa11e268a2a5a5ad735f89bd3597eaa7093bf781dc9509333",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_uint8",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "contract": "ReentrancyGuardUpgradeable",
+            "label": "_status",
+            "type": "t_uint256",
+            "src": "../@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "contract": "ReentrancyGuardUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:74"
+          },
+          {
+            "contract": "OrderBook",
+            "label": "_currentOrderId",
+            "type": "t_struct(Counter)1214_storage",
+            "src": "../project:/contracts/OrderBook.sol:26"
+          },
+          {
+            "contract": "OrderBook",
+            "label": "_orderBooks",
+            "type": "t_mapping(t_uint256,t_struct(Order)4797_storage)",
+            "src": "../project:/contracts/OrderBook.sol:29"
+          },
+          {
+            "contract": "OrderBook",
+            "label": "_orderStatus",
+            "type": "t_mapping(t_uint256,t_enum(Status)4776)",
+            "src": "../project:/contracts/OrderBook.sol:32"
+          },
+          {
+            "contract": "OrderBook",
+            "label": "_orderBids",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Bid)4802_storage)dyn_storage)",
+            "src": "../project:/contracts/OrderBook.sol:35"
+          }
+        ],
+        "types": {
+          "t_struct(Counter)1214_storage": {
+            "label": "struct CountersUpgradeable.Counter",
+            "members": [
+              {
+                "label": "_value",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_uint256,t_struct(Order)4797_storage)": {
+            "label": "mapping(uint256 => struct IOrderBook.Order)"
+          },
+          "t_struct(Order)4797_storage": {
+            "label": "struct IOrderBook.Order",
+            "members": [
+              {
+                "label": "maker",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAsset",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAmount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "taker",
+                "type": "t_address"
+              },
+              {
+                "label": "takeAsset",
+                "type": "t_address"
+              },
+              {
+                "label": "takeAmount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "salt",
+                "type": "t_uint256"
+              },
+              {
+                "label": "startBlock",
+                "type": "t_uint256"
+              },
+              {
+                "label": "endBlock",
+                "type": "t_uint256"
+              },
+              {
+                "label": "id",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_uint256,t_enum(Status)4776)": {
+            "label": "mapping(uint256 => enum IOrderBook.Status)"
+          },
+          "t_enum(Status)4776": {
+            "label": "enum IOrderBook.Status",
+            "members": [
+              "OPENED",
+              "PARTIALLY_FILLED",
+              "FULFILLED",
+              "CANCELED"
+            ]
+          },
+          "t_mapping(t_uint256,t_array(t_struct(Bid)4802_storage)dyn_storage)": {
+            "label": "mapping(uint256 => struct IOrderBook.Bid[])"
+          },
+          "t_array(t_struct(Bid)4802_storage)dyn_storage": {
+            "label": "struct IOrderBook.Bid[]"
+          },
+          "t_struct(Bid)4802_storage": {
+            "label": "struct IOrderBook.Bid",
+            "members": [
+              {
+                "label": "taker",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAmountBought",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "a9566bca4f6f396ad195cdd1d035f32119b8ac261054299357c8b80c974b205c": {
+      "address": "0x0beC8B19Ac69cD74Eafc8c3B0472A40d0E29DF97",
+      "txHash": "0xb984e31acdd91fbcffd170160a37a12aa8bada2e9c4e98654cba1fa0bf129e41",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_uint8",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "contract": "ReentrancyGuardUpgradeable",
+            "label": "_status",
+            "type": "t_uint256",
+            "src": "../@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "contract": "ReentrancyGuardUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:74"
+          },
+          {
+            "contract": "OrderBookV2",
+            "label": "_currentOrderId",
+            "type": "t_struct(Counter)1214_storage",
+            "src": "../project:/contracts/OrderBookV2.sol:26"
+          },
+          {
+            "contract": "OrderBookV2",
+            "label": "_orderBooks",
+            "type": "t_mapping(t_uint256,t_struct(Order)6033_storage)",
+            "src": "../project:/contracts/OrderBookV2.sol:29"
+          },
+          {
+            "contract": "OrderBookV2",
+            "label": "_orderStatus",
+            "type": "t_mapping(t_uint256,t_enum(Status)6012)",
+            "src": "../project:/contracts/OrderBookV2.sol:32"
+          },
+          {
+            "contract": "OrderBookV2",
+            "label": "_orderBids",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Bid)6038_storage)dyn_storage)",
+            "src": "../project:/contracts/OrderBookV2.sol:35"
+          }
+        ],
+        "types": {
+          "t_struct(Counter)1214_storage": {
+            "label": "struct CountersUpgradeable.Counter",
+            "members": [
+              {
+                "label": "_value",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_uint256,t_struct(Order)6033_storage)": {
+            "label": "mapping(uint256 => struct IOrderBook.Order)"
+          },
+          "t_struct(Order)6033_storage": {
+            "label": "struct IOrderBook.Order",
+            "members": [
+              {
+                "label": "maker",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAsset",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAmount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "taker",
+                "type": "t_address"
+              },
+              {
+                "label": "takeAsset",
+                "type": "t_address"
+              },
+              {
+                "label": "takeAmount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "salt",
+                "type": "t_uint256"
+              },
+              {
+                "label": "startBlock",
+                "type": "t_uint256"
+              },
+              {
+                "label": "endBlock",
+                "type": "t_uint256"
+              },
+              {
+                "label": "id",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_uint256,t_enum(Status)6012)": {
+            "label": "mapping(uint256 => enum IOrderBook.Status)"
+          },
+          "t_enum(Status)6012": {
+            "label": "enum IOrderBook.Status",
+            "members": [
+              "OPENED",
+              "PARTIALLY_FILLED",
+              "FULFILLED",
+              "CANCELED"
+            ]
+          },
+          "t_mapping(t_uint256,t_array(t_struct(Bid)6038_storage)dyn_storage)": {
+            "label": "mapping(uint256 => struct IOrderBook.Bid[])"
+          },
+          "t_array(t_struct(Bid)6038_storage)dyn_storage": {
+            "label": "struct IOrderBook.Bid[]"
+          },
+          "t_struct(Bid)6038_storage": {
+            "label": "struct IOrderBook.Bid",
+            "members": [
+              {
+                "label": "taker",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAmountBought",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "6d03fb279ee097ddf28c722cb30df3c3e4ebff4d982a408640d80ed72faf7f41": {
+      "address": "0xBAf2F8Ecd2f37cc665F2D900455AdF34c40DB053",
+      "txHash": "0xfbe97fb5f8c299a0b48b5a342813e9923bdd743624096c4e65286baa388ace8f",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_uint8",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "contract": "ReentrancyGuardUpgradeable",
+            "label": "_status",
+            "type": "t_uint256",
+            "src": "../@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "contract": "ReentrancyGuardUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:74"
+          },
+          {
+            "contract": "OrderBookV3",
+            "label": "_currentOrderId",
+            "type": "t_struct(Counter)1214_storage",
+            "src": "../project:/contracts/OrderBookV3.sol:26"
+          },
+          {
+            "contract": "OrderBookV3",
+            "label": "_orderBooks",
+            "type": "t_mapping(t_uint256,t_struct(Order)6033_storage)",
+            "src": "../project:/contracts/OrderBookV3.sol:29"
+          },
+          {
+            "contract": "OrderBookV3",
+            "label": "_orderStatus",
+            "type": "t_mapping(t_uint256,t_enum(Status)6012)",
+            "src": "../project:/contracts/OrderBookV3.sol:32"
+          },
+          {
+            "contract": "OrderBookV3",
+            "label": "_orderBids",
+            "type": "t_mapping(t_uint256,t_array(t_struct(Bid)6038_storage)dyn_storage)",
+            "src": "../project:/contracts/OrderBookV3.sol:35"
+          }
+        ],
+        "types": {
+          "t_struct(Counter)1214_storage": {
+            "label": "struct CountersUpgradeable.Counter",
+            "members": [
+              {
+                "label": "_value",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_uint256,t_struct(Order)6033_storage)": {
+            "label": "mapping(uint256 => struct IOrderBook.Order)"
+          },
+          "t_struct(Order)6033_storage": {
+            "label": "struct IOrderBook.Order",
+            "members": [
+              {
+                "label": "maker",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAsset",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAmount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "taker",
+                "type": "t_address"
+              },
+              {
+                "label": "takeAsset",
+                "type": "t_address"
+              },
+              {
+                "label": "takeAmount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "salt",
+                "type": "t_uint256"
+              },
+              {
+                "label": "startBlock",
+                "type": "t_uint256"
+              },
+              {
+                "label": "endBlock",
+                "type": "t_uint256"
+              },
+              {
+                "label": "id",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_uint256,t_enum(Status)6012)": {
+            "label": "mapping(uint256 => enum IOrderBook.Status)"
+          },
+          "t_enum(Status)6012": {
+            "label": "enum IOrderBook.Status",
+            "members": [
+              "OPENED",
+              "PARTIALLY_FILLED",
+              "FULFILLED",
+              "CANCELED"
+            ]
+          },
+          "t_mapping(t_uint256,t_array(t_struct(Bid)6038_storage)dyn_storage)": {
+            "label": "mapping(uint256 => struct IOrderBook.Bid[])"
+          },
+          "t_array(t_struct(Bid)6038_storage)dyn_storage": {
+            "label": "struct IOrderBook.Bid[]"
+          },
+          "t_struct(Bid)6038_storage": {
+            "label": "struct IOrderBook.Bid",
+            "members": [
+              {
+                "label": "taker",
+                "type": "t_address"
+              },
+              {
+                "label": "makeAmountBought",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    }
+  }
+}
